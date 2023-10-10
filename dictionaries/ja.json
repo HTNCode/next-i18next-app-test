@@ -1,0 +1,12 @@
+{
+  "page": {
+    "home": {
+      "title": "next-i18nextのアプリ",
+      "description": "これはテストです。"
+    }
+  },
+  "navigation": {
+    "home": "ホーム",
+    "about": "私たちについて"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "page": {
+    "home": {
+      "title": "next-i18next-app",
+      "description": "This is test."
+    }
+  },
+  "navigation": {
+    "home": "HOME",
+    "about": "ABOUT"
+  }
+}
