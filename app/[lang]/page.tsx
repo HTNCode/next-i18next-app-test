@@ -1,12 +1,13 @@
 import { Locale } from "../../i18n.config";
 import { getDictionary } from "../libs/dictionary";
 
-export default async function Home({
-  params: { lang },
-}: {
-  params: { lang: Locale };
-}) {
-  const { page } = await getDictionary(lang);
+type Props = {
+  params: Promise<{ lang: string }>;
+};
+
+export default async function Home({ params }: Props) {
+  const { lang } = await params;
+  const { page } = await getDictionary(lang as Locale);
 
   if (!page) return null;
 

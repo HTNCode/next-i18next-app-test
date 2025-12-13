@@ -15,17 +15,17 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default function RootLayout({
-  children,
-  params,
-}: {
+type Props = {
   children: React.ReactNode;
-  params: { lang: Locale; pathname: string };
-}) {
+  params: Promise<{ lang: string }>;
+};
+
+export default async function RootLayout({ children, params }: Props) {
+  const { lang } = await params;
   return (
-    <html lang={params.lang}>
+    <html lang={lang}>
       <body className={inter.className}>
-        <Header lang={params.lang} />
+        <Header lang={lang as Locale} />
         <main>{children}</main>
       </body>
     </html>
